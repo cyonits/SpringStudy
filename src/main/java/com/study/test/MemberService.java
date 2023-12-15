@@ -27,7 +27,7 @@ public class MemberService {
     @Transactional
     public void patchMember(MemberDto memberDto) {
         Member member = memberRepository.findById(memberDto.getId()).orElseThrow(RuntimeException::new);
-        member.insert(memberDto);
+        member.update(memberDto);
     }
 
 //    public byte[] createMemberExcel() throws IOException {
